@@ -1,0 +1,39 @@
+{
+    // 推荐的 VSCode 扩展列表
+    "recommendations": [
+        // Python 开发核心扩展
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        // 代码质量与测试
+        "littlefoxteam.vscode-python-test-adapter",
+        // Docker 支持
+        "ms-azuretools.vscode-docker",
+        // Git 增强
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        // 数据库工具
+        "mtxr.sqltools",
+        // 文件格式支持
+        "redhat.vscode-yaml",
+        "tamasfe.even-better-toml",
+        // 编辑器增强
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "wayou.vscode-todo-highlight",
+        // REST API 测试
+        "humao.rest-client",
+        // 其他实用工具
+        "editorconfig.editorconfig",
+        "gruntfuggly.todo-tree",
+        "aaron-bond.better-comments"
+    ],
+    // 不推荐的扩展（可能与当前配置冲突）
+    "unwantedRecommendations": [
+        "ms-python.pylint",
+        "ms-python.flake8",
+        "ms-python.black-formatter",
+        "ms-python.isort"
+    ]
+}
