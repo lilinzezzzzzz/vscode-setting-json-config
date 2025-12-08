@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "🚀 FastAPI: Run Server",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",
             // 核心参数配置
