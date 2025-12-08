@@ -21,7 +21,7 @@
     // 注意：新版 Ruff 插件不再需要 "ruff.enable": true 这种顶层配置
     // 也不需要 "ruff.fixAll" 这种旧命令，而是集成到了 standard code actions 中
     "[python]": {
-        "editor.defaultFormatter": "astral-sh.ruff", // 对应新版插件 ID
+        "editor.defaultFormatter": "charliermarsh.ruff", // 对应新版插件 ID
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             // 显式指定使用 Ruff 进行修复，防止与其他工具冲突

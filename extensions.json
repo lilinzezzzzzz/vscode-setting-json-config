@@ -3,7 +3,7 @@
         // Python 核心
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "astral-sh.ruff", // 【变更】推荐使用官方最新 ID
+        "charliermarsh.ruff", // 【变更】推荐使用官方最新 ID
         // 容器与协作
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
