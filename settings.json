@@ -1,96 +1,96 @@
 {
-    // ==================== Python 解释器配置 ====================
-    // 【优化】不要硬编码 Windows 的 "Scripts/python.exe"。
-    // VS Code 会自动识别 .venv 目录。如果非要写，建议只保留这一行，
-    // 但在团队协作中，最好将此行移至 .gitignore 的个人配置中，或完全删除让 VS Code 自行发现。
-    // "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
-    // 自动激活环境
-    "python.terminal.activateEnvironment": true,
-    // ==================== Pylance (FastAPI 强化) ====================
-    // FastAPI 严重依赖类型系统，建议将检查级别设为 basic 或 standard
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.autoImportCompletions": true,
-    // 开启索引优化性能
-    "python.analysis.indexing": true,
-    // 内存优化：对于大项目很有用
-    "python.analysis.userFileIndexingLimit": 2000,
-    // 类型提示显示
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    // ==================== Ruff (新版最佳实践) ====================
-    // 注意：新版 Ruff 插件不再需要 "ruff.enable": true 这种顶层配置
-    // 也不需要 "ruff.fixAll" 这种旧命令，而是集成到了 standard code actions 中
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff", // 对应新版插件 ID
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            // 显式指定使用 Ruff 进行修复，防止与其他工具冲突
-            "source.fixAll.ruff": "explicit",
-            "source.organizeImports.ruff": "explicit"
-        }
-    },
-    // ==================== 编辑器通用配置 ====================
-    "editor.rulers": [
-        120
-    ],
-    "editor.wordWrapColumn": 120,
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    // 渲染空格：建议改为 "selection" 看起来更清爽，只在选中时显示
-    "editor.renderWhitespace": "selection",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": true,
-    // ==================== 文件与搜索配置 ====================
-    "files.encoding": "utf8",
-    "files.eol": "\n", // 强制 LF，避免 Windows/Linux 换行符打架
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "files.autoSave": "onFocusChange",
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/*.pyc": true,
-        "**/.pytest_cache": true,
-        "**/.mypy_cache": true,
-        "**/.ruff_cache": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/.venv": false // 【建议】让 .venv 在左侧树中可见，方便查看包，但搜索排除
-    },
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/.venv": true, // 搜索时排除 venv
-        "**/__pycache__": true,
-        "**/.pytest_cache": true,
-        "**/.ruff_cache": true,
-        "**/uv.lock": true,
-        "**/poetry.lock": true,
-        "**/pdm.lock": true
-    },
-    // ==================== 终端配置 ====================
-    // 【优化】删除 Windows 特有的 defaultProfile 设置，让 VS Code 根据系统自动选择
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.scrollback": 10000,
-    // ==================== Git 配置 ====================
-    "git.enableSmartCommit": true,
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    // ==================== 语言特定格式化 ====================
-    "[json][jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[yaml]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml", // 显式指定
-        "editor.tabSize": 2
-    },
-    "[toml]": {
-        "editor.defaultFormatter": "tamasfe.even-better-toml"
-    },
-    "[dockerfile]": {
-        "editor.tabSize": 2
-    },
-    // ==================== 性能与遥测 ====================
-    "telemetry.telemetryLevel": "off",
-    // 扩展自动更新建议开启，除非你有特定版本锁定需求
-    "extensions.autoUpdate": true
+  // ==================== Python 核心设置 ====================
+  // 终端启动时自动激活环境
+  "python.terminal.activateEnvironment": true,
+  // Pylance 性能与类型检查 (适合 FastAPI)
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.indexing": true,
+  "python.analysis.userFileIndexingLimit": 2000,
+  // 嵌入式提示 (Inlay Hints) - 个人喜好，不喜欢可设为 false
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+
+  // ==================== Ruff 集成 (行为控制) ====================
+  "[python]": {
+    // 使用 Ruff 作为默认格式化工具
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    // 保存时自动格式化
+    "editor.formatOnSave": true,
+    // 保存时触发的代码动作
+    "editor.codeActionsOnSave": {
+      // 显式调用 Ruff 进行修复 (Fix All)
+      "source.fixAll.ruff": "explicit",
+      // 显式调用 Ruff 优化导入 (Isort)
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+
+  // ==================== 编辑器外观与习惯 ====================
+  // 视觉参考线 (配合 Ruff 的 88 字符)
+  "editor.rulers": [88],
+  "editor.wordWrapColumn": 88,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  // 仅在选中文本时显示空格点，保持界面清爽
+  "editor.renderWhitespace": "selection",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+
+  // ==================== 文件系统与排除 ====================
+  "files.encoding": "utf8",
+  // 强制使用 LF 换行 (Linux 标准)，避免跨平台 Git 差异
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+
+  // 左侧文件树排除 (显示 venv，但排除缓存垃圾)
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.venv": false
+  },
+  // 全局搜索排除 (排除 venv 和锁文件，提高搜索速度)
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.venv": true,
+    "**/__pycache__": true,
+    "**/.ruff_cache": true,
+    "**/uv.lock": true,
+    "**/poetry.lock": true,
+    "**/pdm.lock": true
+  },
+
+  // ==================== 终端与 Git ====================
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.scrollback": 10000,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  // ==================== 其他语言格式化 ====================
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[dockerfile]": {
+    "editor.tabSize": 2
+  },
+
+  // ==================== 系统 ====================
+  "telemetry.telemetryLevel": "off",
+  "extensions.autoUpdate": true
 }
