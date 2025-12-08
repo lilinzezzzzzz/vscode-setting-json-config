@@ -1,0 +1,36 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🚀 FastAPI: Run Server",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            // 核心参数配置
+            "args": [
+                "main:app",             // 【注意】这里修改为你的入口文件和app对象，例如 app.main:app
+                "--reload",             // 开发模式开启热重载
+                "--host", "127.0.0.1",
+                "--port", "8000"
+            ],
+            "jinja": true,              // 开启 Jinja2 模板调试支持（如果你的项目涉及后端渲染HTML）
+            "justMyCode": true,         // 只调试我的代码，跳过库文件（如进入 fastAPI 源码），设为 false 可深入库源码
+            "env": {
+                // 确保项目根目录在 PYTHONPATH 中，解决导入路径报错问题
+                "PYTHONPATH": "${workspaceFolder}"
+                // "MY_ENV_VAR": "value" // 可以在这里注入环境变量
+            }
+        },
+        {
+            "name": "🐍 Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
