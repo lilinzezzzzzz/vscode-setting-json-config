@@ -87,7 +87,7 @@
     "terminal.integrated.scrollback": 10000,
     // ==================== Git 配置 ====================
     "git.enableSmartCommit": true,
-    "git.confirmSync": true,
+    "git.confirmSync": false,
     "git.autofetch": true,
     "git.ignoreLimitWarning": true,
     // ==================== JSON 格式化配置 ====================

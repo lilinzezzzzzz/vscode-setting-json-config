@@ -5,8 +5,6 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "charliermarsh.ruff",
-        // 代码质量与测试
-        "littlefoxteam.vscode-python-test-adapter",
         // Docker 支持
         "ms-azuretools.vscode-docker",
         // Git 增强
@@ -19,7 +17,6 @@
         "tamasfe.even-better-toml",
         // 编辑器增强
         "oderwat.indent-rainbow",
-        "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens",
         "wayou.vscode-todo-highlight",
         // REST API 测试
