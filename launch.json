@@ -11,13 +11,15 @@
             "module": "uvicorn",
             // 核心参数配置
             "args": [
-                "main:app",             // 【注意】这里修改为你的入口文件和app对象，例如 app.main:app
-                "--reload",             // 开发模式开启热重载
-                "--host", "127.0.0.1",
-                "--port", "8000"
+                "main:app", // 【注意】这里修改为你的入口文件和app对象，例如 app.main:app
+                "--reload", // 开发模式开启热重载
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000"
             ],
-            "jinja": true,              // 开启 Jinja2 模板调试支持（如果你的项目涉及后端渲染HTML）
-            "justMyCode": true,         // 只调试我的代码，跳过库文件（如进入 fastAPI 源码），设为 false 可深入库源码
+            "jinja": true, // 开启 Jinja2 模板调试支持（如果你的项目涉及后端渲染HTML）
+            "justMyCode": true, // 只调试我的代码，跳过库文件（如进入 fastAPI 源码），设为 false 可深入库源码
             "env": {
                 // 确保项目根目录在 PYTHONPATH 中，解决导入路径报错问题
                 "PYTHONPATH": "${workspaceFolder}"

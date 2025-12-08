@@ -4,20 +4,16 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "astral-sh.ruff", // 【变更】推荐使用官方最新 ID
-        
         // 容器与协作
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
         "mhutchie.git-graph",
-        
         // 数据库与 API
         "mtxr.sqltools",
-        "humao.rest-client", 
-        
+        "humao.rest-client",
         // 配置文件支持
         "redhat.vscode-yaml",
         "tamasfe.even-better-toml", // 对 pyproject.toml 支持很好
-        
         // 视觉辅助
         "usernamehw.errorlens", // 强烈推荐，直接在行内显示错误
         "wayou.vscode-todo-highlight",

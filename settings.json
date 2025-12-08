@@ -4,26 +4,22 @@
     // VS Code 会自动识别 .venv 目录。如果非要写，建议只保留这一行，
     // 但在团队协作中，最好将此行移至 .gitignore 的个人配置中，或完全删除让 VS Code 自行发现。
     // "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
-    
     // 自动激活环境
     "python.terminal.activateEnvironment": true,
-
     // ==================== Pylance (FastAPI 强化) ====================
     // FastAPI 严重依赖类型系统，建议将检查级别设为 basic 或 standard
-    "python.analysis.typeCheckingMode": "basic", 
+    "python.analysis.typeCheckingMode": "basic",
     "python.analysis.autoImportCompletions": true,
     // 开启索引优化性能
-    "python.analysis.indexing": true, 
+    "python.analysis.indexing": true,
     // 内存优化：对于大项目很有用
     "python.analysis.userFileIndexingLimit": 2000,
     // 类型提示显示
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
-
     // ==================== Ruff (新版最佳实践) ====================
     // 注意：新版 Ruff 插件不再需要 "ruff.enable": true 这种顶层配置
     // 也不需要 "ruff.fixAll" 这种旧命令，而是集成到了 standard code actions 中
-    
     "[python]": {
         "editor.defaultFormatter": "astral-sh.ruff", // 对应新版插件 ID
         "editor.formatOnSave": true,
@@ -33,27 +29,23 @@
             "source.organizeImports.ruff": "explicit"
         }
     },
-
     // ==================== 编辑器通用配置 ====================
-    "editor.rulers": [120],
+    "editor.rulers": [
+        120
+    ],
     "editor.wordWrapColumn": 120,
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     // 渲染空格：建议改为 "selection" 看起来更清爽，只在选中时显示
-    "editor.renderWhitespace": "selection", 
+    "editor.renderWhitespace": "selection",
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": true,
-    
     // ==================== 文件与搜索配置 ====================
     "files.encoding": "utf8",
     "files.eol": "\n", // 强制 LF，避免 Windows/Linux 换行符打架
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    // 【建议】对于自动保存，afterDelay 配合 formatOnSave 可能会导致你写一半代码就格式化，
-    // 可能会打断思路。建议改为 "onFocusChange" (切窗口保存) 或保持现状但把 delay 调大。
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
-
+    "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
@@ -64,7 +56,6 @@
         "**/Thumbs.db": true,
         "**/.venv": false // 【建议】让 .venv 在左侧树中可见，方便查看包，但搜索排除
     },
-    
     "search.exclude": {
         "**/node_modules": true,
         "**/.venv": true, // 搜索时排除 venv
@@ -75,18 +66,15 @@
         "**/poetry.lock": true,
         "**/pdm.lock": true
     },
-
     // ==================== 终端配置 ====================
     // 【优化】删除 Windows 特有的 defaultProfile 设置，让 VS Code 根据系统自动选择
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.scrollback": 10000,
-
     // ==================== Git 配置 ====================
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.autofetch": true,
-
     // ==================== 语言特定格式化 ====================
     "[json][jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -101,9 +89,8 @@
     "[dockerfile]": {
         "editor.tabSize": 2
     },
-
     // ==================== 性能与遥测 ====================
     "telemetry.telemetryLevel": "off",
     // 扩展自动更新建议开启，除非你有特定版本锁定需求
-    "extensions.autoUpdate": true 
+    "extensions.autoUpdate": true
 }
