@@ -1,5 +1,7 @@
 {
   // ==================== Python 核心设置 ====================
+  // Python 解释器路径
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
   // 终端启动时自动激活环境
   "python.terminal.activateEnvironment": true,
   // Pylance 性能与类型检查 (适合 FastAPI)
