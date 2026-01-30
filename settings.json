@@ -97,8 +97,6 @@
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   // 标签页显示：短格式（只显示文件名）
   "workbench.editor.labelFormat": "short",
-  // 标签页关闭按钮:仅在激活的标签显示(减少视觉干扰)
-  "workbench.editor.tabCloseButton": "right",
   // 限制打开的编辑器数量：最多5个，超出自动关闭最久未使用的
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 5,
@@ -110,5 +108,20 @@
   "workbench.iconTheme": "material-icon-theme",
   // 产品图标主题 - 默认
   "workbench.productIconTheme": "material-product-icons",
-  "workbench.editor.tabActionLocation": "right"
+  "workbench.editor.tabActionLocation": "right",
+  // ==================== 标签页颜色自定义 ====================
+  "workbench.colorCustomizations": {
+    // 激活标签页的背景色(显眼的深蓝灰色)
+    "tab.activeBackground": "#3a4f6b",
+    // 激活标签页的前景色(文字颜色 - 纯白色加粗效果)
+    "tab.activeForeground": "#ffffff",
+    // 激活标签页的边框(明亮的蓝色高亮条)
+    "tab.activeBorder": "#61afef",
+    // 激活标签页顶部边框(3px粗的亮蓝色高亮)
+    "tab.activeBorderTop": "#4fa8ff",
+    // 未激活标签页的背景色(更暗以增强对比)
+    "tab.inactiveBackground": "#181b20",
+    // 未激活标签页的前景色(较暗的文字)
+    "tab.inactiveForeground": "#6b7280"
+  }
 }
