@@ -2,8 +2,9 @@
   "recommendations": [
     // Python 核心
     "ms-python.python",
-    "ms-python.vscode-pylance",
     "ms-python.debugpy",
+    // 类型检查 (Pylance 开源替代方案)
+    "detachhead.basedpyright",
     // Ruff (Linting + Formatting)
     "charliermarsh.ruff",
     // 测试
