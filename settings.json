@@ -25,17 +25,17 @@
   "ruff.nativeServer": true,
   "ruff.fixAll": true,
   "ruff.configurationPreference": "filesystemFirst",
-  // ==================== Basedpyright 类型检查 (Pylance替代) ====================
-  "basedpyright.analysis.typeCheckingMode": "basic",
-  "basedpyright.analysis.autoImportCompletions": true,
-  "basedpyright.analysis.importFormat": "absolute",
-  "basedpyright.analysis.inlayHints.functionReturnTypes": true,
-  "basedpyright.analysis.inlayHints.variableTypes": false,
-  "basedpyright.analysis.inlayHints.pytestParameters": true,
+  // ==================== Pylance 类型检查 ====================
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.importFormat": "absolute",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.inlayHints.pytestParameters": true,
   // 追踪类型导入(查找定义时更智能)
-  "basedpyright.analysis.indexing": true,
+  "python.analysis.indexing": true,
   // 诊断严格程度
-  "basedpyright.analysis.diagnosticSeverityOverrides": {
+  "python.analysis.diagnosticSeverityOverrides": {
     // 未使用的import警告级别
     "reportUnusedImport": "warning",
     // 未使用的变量警告级别
