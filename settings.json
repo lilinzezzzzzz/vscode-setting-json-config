@@ -3,6 +3,8 @@
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
   "python.terminal.activateEnvironment": true,
   "python.terminal.activateEnvInCurrentTerminal": true,
+  // 启用Python环境变量文件
+  "python.envFile": "${workspaceFolder}/.env",
   // ==================== 编辑器配置 ====================
   "[python]": {
     "editor.formatOnSave": false,
@@ -23,13 +25,22 @@
   "ruff.nativeServer": true,
   "ruff.fixAll": true,
   "ruff.configurationPreference": "filesystemFirst",
-  // ==================== Pylance 类型检查 ====================
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.importFormat": "absolute",
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.variableTypes": false,
-  "python.analysis.inlayHints.pytestParameters": true,
+  // ==================== Basedpyright 类型检查 (Pylance替代) ====================
+  "basedpyright.analysis.typeCheckingMode": "basic",
+  "basedpyright.analysis.autoImportCompletions": true,
+  "basedpyright.analysis.importFormat": "absolute",
+  "basedpyright.analysis.inlayHints.functionReturnTypes": true,
+  "basedpyright.analysis.inlayHints.variableTypes": false,
+  "basedpyright.analysis.inlayHints.pytestParameters": true,
+  // 追踪类型导入(查找定义时更智能)
+  "basedpyright.analysis.indexing": true,
+  // 诊断严格程度
+  "basedpyright.analysis.diagnosticSeverityOverrides": {
+    // 未使用的import警告级别
+    "reportUnusedImport": "warning",
+    // 未使用的变量警告级别  
+    "reportUnusedVariable": "warning"
+  },
   // ==================== 测试配置 (pytest) ====================
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
@@ -83,17 +94,67 @@
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.autofetch": true,
-  // 允许在提交时显示“不验证”选项
-  "git.allowNoVerifyCommit": true,
+  // 默认显示工作树中的所有更改
+  "git.showUntrackedFiles": true,
+  // 启用装饰器（显示文件的Git状态标记）
+  "git.decorations.enabled": true,
   // ==================== 终端配置 ====================
   "terminal.integrated.env.windows": {
     "PYTHONIOENCODING": "utf-8"
   },
-  "terminal.integrated.fontSize": 12,
+  // 终端字体大小
+  "terminal.integrated.fontSize": 13,
+  // 终端字体家族(使用与编辑器相同的等宽字体)
+  "terminal.integrated.fontFamily": "'Source Code Pro', 'Courier New', monospace",
+  // 终端字体粗细(normal, bold, 100-900)
+  "terminal.integrated.fontWeight": "normal",
+  // 终端行高(像素值,1.0为默认)
+  "terminal.integrated.lineHeight": 1.0,
   // ==================== 其他 ====================
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.stickyScroll.enabled": true,
+  // ==================== 编辑器增强配置 ====================
+  // 自动保存(窗口失去焦点时)
+  "files.autoSave": "onFocusChange",
+  // 自动补全括号/引号
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  // 括号内自动补全空格
+  "editor.autoSurround": "languageDefined",
+  // 光标闪烁样式(line/block/underline)
+  "editor.cursorBlinking": "smooth",
+  // 光标平滑动画
+  "editor.cursorSmoothCaretAnimation": "on",
+  // 小地图配置
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 80,
+  "editor.minimap.renderCharacters": false,
+  // 滚动平滑动画
+  "editor.smoothScrolling": true,
+  // 显示空白字符(boundary:仅在单词边界显示)
+  "editor.renderWhitespace": "boundary",
+  // 显示缩进参考线
+  "editor.guides.indentation": true,
+  // 高亮显示当前行
+  "editor.renderLineHighlight": "all",
+  // 启用内联建议
+  "editor.inlineSuggest.enabled": true,
+  // 编辑器圆角边框
+  "editor.roundedSelection": true,
+  // ==================== 字体配置 ====================
+  // 编辑器字体家族（推荐使用等宽字体）
+  "editor.fontFamily": "'Source Code Pro', 'Courier New', monospace",
+  // 字体大小
+  "editor.fontSize": 13,
+  // 启用字体连字（仅支持 Fira Code、JetBrains Mono 等字体）
+  "editor.fontLigatures": true,
+  // 字体粗细（100-900，400为正常，700为粗体）
+  "editor.fontWeight": "400",
+  // 行高（0为自动，或指定像素值如18）
+  "editor.lineHeight": 0,
+  // 字母间距（像素值，0为默认）
+  "editor.letterSpacing": 0,
   // ==================== 标题栏显示优化 ====================
   // 窗口标题栏：只显示文件名和工作区名称（更简洁）
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
