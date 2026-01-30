@@ -93,17 +93,22 @@
   "editor.guides.bracketPairs": "active",
   "editor.stickyScroll.enabled": true,
   // ==================== 标题栏显示优化 ====================
-  // 在标题栏突出显示当前文件名
-  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-  // 未保存文件在标题栏标记更明显
-  "workbench.editor.labelFormat": "medium",
-  // 在标签页显示完整路径提示
-  "workbench.editor.tabDescription": "long",
+  // 窗口标题栏：只显示文件名和工作区名称（更简洁）
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+  // 标签页显示：短格式（只显示文件名）
+  "workbench.editor.labelFormat": "short",
+  // 标签页关闭按钮:仅在激活的标签显示(减少视觉干扰)
+  "workbench.editor.tabCloseButton": "right",
+  // 限制打开的编辑器数量：最多5个，超出自动关闭最久未使用的
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 5,
+  "workbench.editor.limit.perEditorGroup": true,
   // ==================== 主题配置 ====================
   // 颜色主题 - Qoder Dark (Qoder 专用暗色主题)
   "workbench.colorTheme": "One Dark Pro Night Flat",
   // 文件图标主题 - A File Icon (清晰易辨识的文件图标)
   "workbench.iconTheme": "material-icon-theme",
   // 产品图标主题 - 默认
-  "workbench.productIconTheme": "material-product-icons"
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.editor.tabActionLocation": "right"
 }
