@@ -38,7 +38,7 @@
   "basedpyright.analysis.diagnosticSeverityOverrides": {
     // 未使用的import警告级别
     "reportUnusedImport": "warning",
-    // 未使用的变量警告级别  
+    // 未使用的变量警告级别
     "reportUnusedVariable": "warning"
   },
   // ==================== 测试配置 (pytest) ====================
@@ -142,6 +142,27 @@
   "editor.inlineSuggest.enabled": true,
   // 编辑器圆角边框
   "editor.roundedSelection": true,
+  // ==================== 空格与换行控制 ====================
+  // 文件末尾自动添加空行
+  "files.insertFinalNewline": true,
+  // 自动删除文件末尾多余的空行
+  "files.trimFinalNewlines": true,
+  // 保存时自动删除行尾空格
+  "files.trimTrailingWhitespace": true,
+  // 文件编码(UTF-8)
+  "files.encoding": "utf8",
+  // 行结束符(Linux/macOS使用LF)
+  "files.eol": "\n",
+  // 自动检测缩进(从打开的文件内容检测)
+  "editor.detectIndentation": true,
+  // 自动缩进策略
+  "editor.autoIndent": "full",
+  // 自动换行(off/on/wordWrapColumn/bounded)
+  "editor.wordWrap": "off",
+  // 换行列宽度(当wordWrap为wordWrapColumn时生效)
+  "editor.wordWrapColumn": 120,
+  // 显示控制字符(如\t\n)
+  "editor.renderControlCharacters": true,
   // ==================== 字体配置 ====================
   // 编辑器字体家族（推荐使用等宽字体）
   "editor.fontFamily": "'Source Code Pro', 'Courier New', monospace",
