@@ -1,98 +1,96 @@
 {
-  // ==================== Python 核心设置 ====================
-  // Python 解释器路径
+  // ==================== Python 基础配置 ====================
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
-  // 终端启动时自动激活环境
   "python.terminal.activateEnvironment": true,
-  // Pylance 性能与类型检查 (适合 FastAPI)
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  // ==================== 编辑器配置 ====================
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.rulers": [
+      88,
+      120
+    ],
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  // ==================== Ruff (Linting + Formatting) ====================
+  // Ruff 原生语言服务器配置（v2024+）
+  "ruff.enable": true,
+  "ruff.nativeServer": true,
+  "ruff.fixAll": true,
+  "ruff.configurationPreference": "filesystemFirst",
+  // ==================== Pylance 类型检查 ====================
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.indexing": true,
-  "python.analysis.userFileIndexingLimit": 2000,
-  // 嵌入式提示 (Inlay Hints) - 个人喜好，不喜欢可设为 false
+  "python.analysis.importFormat": "absolute",
   "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.variableTypes": true,
-
-  // ==================== Ruff 集成 (行为控制) ====================
-  "[python]": {
-    // 使用 Ruff 作为默认格式化工具
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    // 保存时自动格式化
-    "editor.formatOnSave": true,
-    // 保存时触发的代码动作
-    "editor.codeActionsOnSave": {
-      // 显式调用 Ruff 进行修复 (Fix All)
-      "source.fixAll.ruff": "explicit",
-      // 显式调用 Ruff 优化导入 (Isort)
-      "source.organizeImports.ruff": "explicit"
-    }
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.inlayHints.pytestParameters": true,
+  // ==================== 测试配置 (pytest) ====================
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": [
+    "dev/tests",
+    "-v",
+    "--tb=short"
+  ],
+  // ==================== 文件关联 ====================
+  "files.associations": {
+    "*.yaml": "yaml",
+    "*.yml": "yaml",
+    "*.j2": "jinja",
+    "*.jinja2": "jinja"
   },
-
-  // ==================== 编辑器外观与习惯 ====================
-  // 视觉参考线 (配合 Ruff 的 88 字符)
-  "editor.rulers": [88],
-  "editor.wordWrapColumn": 88,
-  "editor.tabSize": 4,
-  "editor.insertSpaces": true,
-  // 仅在选中文本时显示空格点，保持界面清爽
-  "editor.renderWhitespace": "selection",
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-
-  // ==================== 文件系统与排除 ====================
-  "files.encoding": "utf8",
-  // 强制使用 LF 换行 (Linux 标准)，避免跨平台 Git 差异
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "files.autoSave": "onFocusChange",
-
-  // 左侧文件树排除 (显示 venv，但排除缓存垃圾)
+  // ==================== 文件排除 ====================
   "files.exclude": {
     "**/__pycache__": true,
     "**/*.pyc": true,
+    "**/*.pyo": true,
     "**/.pytest_cache": true,
-    "**/.mypy_cache": true,
     "**/.ruff_cache": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/.venv": false
+    "**/*.egg-info": true,
+    "**/.mypy_cache": true
   },
-  // 全局搜索排除 (排除 venv 和锁文件，提高搜索速度)
+  // ==================== 搜索排除 ====================
   "search.exclude": {
+    "**/__pycache__": true,
     "**/node_modules": true,
     "**/.venv": true,
-    "**/__pycache__": true,
-    "**/.ruff_cache": true,
     "**/uv.lock": true,
-    "**/poetry.lock": true,
-    "**/pdm.lock": true
+    "**/*.lock": true
   },
-
-  // ==================== 终端与 Git ====================
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.scrollback": 10000,
+  // ==================== YAML 配置 ====================
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "advanced"
+  },
+  // ==================== JSON 配置 ====================
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  // ==================== Git 配置 ====================
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.autofetch": true,
-
-  // ==================== 其他语言格式化 ====================
-  "[json][jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+  // ==================== 终端配置 ====================
+  "terminal.integrated.env.windows": {
+    "PYTHONIOENCODING": "utf-8"
   },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.tabSize": 2
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
-  "[dockerfile]": {
-    "editor.tabSize": 2
-  },
-
-  // ==================== 系统 ====================
-  "telemetry.telemetryLevel": "off",
-  "extensions.autoUpdate": true
+  "terminal.integrated.fontSize": 12,
+  // ==================== 其他 ====================
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.stickyScroll.enabled": true
 }
