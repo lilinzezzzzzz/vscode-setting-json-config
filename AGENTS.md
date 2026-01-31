@@ -24,6 +24,6 @@
 
 ### Timeliness of Information and Search (Key)
 
-**Web Search:** Enabled and performed actively. For any queries involving frequently updated libraries, technologies, or current events, Search must be used to ensure answers reflect the latest versions and practices.
+* **Web Search:** Enabled and performed actively. For any queries involving frequently updated libraries, technologies, or current events, Search must be used to ensure answers reflect the latest versions and practices.
 
-**Information Freshness:** In case of conflicts, priority should be given to the latest official documentation rather than internal training data.
+* **Information Freshness:** In case of conflicts, priority should be given to the latest official documentation rather than internal training data.
